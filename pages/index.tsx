@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Authenticator } from '@aws-amplify/ui-react';
 import awsExports from '../src/aws-exports';
@@ -7,8 +6,8 @@ import { Amplify, Auth, Storage } from 'aws-amplify';
 import ImageUploading from 'react-images-uploading';
 import { StorageImage } from '@aws-amplify/ui-react-storage';
 import { FileUploader } from '@aws-amplify/ui-react';
-import { ScrollView, defaultDarkModeOverride, Button, Flex, Heading, ThemeProvider, ColorMode, Card, ToggleButtonGroup, ToggleButton, Text } from '@aws-amplify/ui-react';
-
+import { Image, ScrollView, defaultDarkModeOverride, Button, Flex, Heading, ThemeProvider, ColorMode, Card, ToggleButtonGroup, ToggleButton, Text } from '@aws-amplify/ui-react';
+  
 Amplify.configure({ ...awsExports });
 
 
@@ -27,6 +26,8 @@ export default function Home() {
     const keys = files.results.map(f => f.key as string)
     if (keys.length > 0) {
       setImageKeyList(keys)
+    } else {
+      setImageKeyList([])
     }
   }
 
