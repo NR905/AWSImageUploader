@@ -1,0 +1,14 @@
+{
+  "resourceName": "userimagebucket",
+  "policyUUID": "1c7ac3f6",
+  "bucketName": "aws-image-bucket-niha-rana",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
